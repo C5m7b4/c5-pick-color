@@ -28,6 +28,7 @@ export default {
       browser: true,
     }),
     typescript({
+      useTsconfigDeclarationDir: true,
       rollupCommonJSResolveHack: true,
       exclude: '**/__tests__/**',
       clean: true,
