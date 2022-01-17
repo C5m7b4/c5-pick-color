@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ColorObject, Color } from '../../types';
+import { Color } from '../../types';
 import themes from '../../theme';
 import Modal from '../Modal/Modal';
 import ColorPicker from '../ColorPicker/ColorPicker';
