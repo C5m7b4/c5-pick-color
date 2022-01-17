@@ -12,6 +12,7 @@ import {
   ColorCombination,
   ColorObject,
 } from './types';
+import ColorPickerWrapper from './components/ColorPickerWrapper/ColorPickerWrapper';
 
 export {
   themes,
@@ -28,4 +29,4 @@ export {
   ColorPicker,
 };
 
-export default ColorPicker;
+export default ColorPickerWrapper;

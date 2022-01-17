@@ -1,26 +1,21 @@
 import React from 'react';
+import Backdrop from '../Backdrop/Backdrop';
+import ModalWrapper from '../ModalWrapper/ModalWrapper';
 
 export interface ModalProps {
-  modal: any;
   show: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactNode[];
 }
 
-const Backdrop = () => {
-  return <div style={{ position: 'fixed' }}></div>;
-};
-
-const Modal: React.FC<ModalProps> = ({
-  modal,
-  show = false,
-  onClose,
-  children,
-}) => {
+const Modal: React.FC<ModalProps> = ({ show = false, onClose, children }) => {
   return (
-    <div>
-      <h2>Modal</h2>
-    </div>
+    <>
+      <Backdrop show={show} close={onClose} />
+      <ModalWrapper className="color-picker-modal-wrapper" show={show}>
+        {children}
+      </ModalWrapper>
+    </>
   );
 };
 
