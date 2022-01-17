@@ -23,6 +23,8 @@ export type ColorPickerProps = {
   hideInputs?: boolean;
   combinations?: ColorCombination | ColorCombination[];
   className?: string;
+  top?: number;
+  left?: number;
 };
 
 const ColorPicker = ({
@@ -34,6 +36,8 @@ const ColorPicker = ({
   hideInputs,
   className,
   combinations,
+  top,
+  left,
 }: ColorPickerProps) => {
   const [col, setCol] = useState<ColorObject>(initColor(color));
 
@@ -101,9 +105,22 @@ const ColorPicker = ({
     updateColor({ ...rgb, [key]: newValue });
   };
 
+  const positionStyles = top
+    ? ({
+        position: 'absolute',
+        top: `${top}px`,
+        left: `${left}px`,
+      } as React.CSSProperties)
+    : null;
+
   return (
     <div
-      style={{ ...variables, ...styles.container, ...colorVariables }}
+      style={{
+        ...variables,
+        ...styles.container,
+        ...colorVariables,
+        ...positionStyles,
+      }}
       className={className}
     >
       <Saturation hsl={hsl} onChange={updateColor} />
