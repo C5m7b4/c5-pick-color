@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Color, ColorObject } from '../types';
 import { initColor } from '../components/ColorPicker/helper';
