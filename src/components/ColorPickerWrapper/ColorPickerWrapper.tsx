@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ColorObject, Color } from '../../types';
+import themes from '../../theme';
 import Modal from '../Modal/Modal';
 import ColorPicker from '../ColorPicker/ColorPicker';
 
@@ -31,8 +32,8 @@ const ColorPickerWrapper: React.FC<ColorPickerWrapperProps> = ({
   useEffect(() => {}, []);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    setTop(event.clientY);
-    setLeft(event.clientX);
+    setTop(event.clientY - window.innerHeight / 2);
+    setLeft(event.clientX - window.innerWidth / 2);
     setShowPicker(!showPicker);
   };
 
@@ -59,6 +60,9 @@ const ColorPickerWrapper: React.FC<ColorPickerWrapperProps> = ({
           <ColorPicker
             color={color}
             onChange={(color) => onChange(color.hex)}
+            theme={themes.dark}
+            top={top}
+            left={left}
           />
         </Modal>
       )}
