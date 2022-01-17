@@ -16,7 +16,7 @@ const Demo: React.FC = () => {
           className="demo-btn1"
           onClick={() => setShowPicker(!showPicker)}
         >
-          Cick Me for Color Picker
+          Click Me for Color Picker
         </button>
       </div>
       <div style={{ width: '100%', textAlign: 'center' }}>
