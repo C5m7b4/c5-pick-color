@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef, useLayoutEffect } from 'react';
+import { useCallback, useState, useRef, useLayoutEffect } from 'react';
 
 const limit = (number: number) => (number > 1 ? 1 : number < 0 ? 0 : number);
 
